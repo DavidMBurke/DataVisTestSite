@@ -79,12 +79,14 @@
         map.on("load", function () {
             csvPromise.then(function (results) {
                 results.data.forEach((row) => {
-                    const totalPop = 
-                        parseInt(row["incu10"]) + parseInt(row["inc1015"]) + parseInt(row["inc1520"]) + parseInt(row["inc2025"]) +
-                        parseInt(row["inc2530"]) + parseInt(row["inc3035"]) + parseInt(row["inc3540"]) + parseInt(row["inc4045"]) +
-                        parseInt(row["inc4550"]) + parseInt(row["inc5060"]) + parseInt(row["inc6075"]) + parseInt(row["i7599"]) +
-                        parseInt(row["i100125"]) + parseInt(row["i125150"]) + parseInt(row["i150200"]) + parseInt(row["in200o"]);
-                    
+                    const incomeLevels = ["incu10", "inc1015", "inc1520", "inc2025", "inc2530", "inc3035", "inc3540", "inc4045",
+                                        "inc4550", "inc5060", "inc6075", "i7599", "i100125", "i125150", "i150200", "in200o" ]
+                    var totalPop = 0
+                    //calculate sum of population for each municipality
+                    incomeLevels.forEach((level) => {
+                        console.log(level);
+                        totalPop += parseInt(row[level]);
+                    })      
 
                     map.setFeatureState(
                         {
@@ -245,6 +247,7 @@
             document.getElementById('incomeLevelSelector').addEventListener('change', function() {
                 updateIncomeLevelVisualization(this.value);
             });
+            
     </script>
 </body>
 
