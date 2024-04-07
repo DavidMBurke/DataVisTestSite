@@ -41,10 +41,9 @@
 </head>
 
 <body>
-    <div style="position: absolute; top: 50px; right: 10px; z-index: 10000;">
+    <div style="position: absolute; top: 50px; right: 10px; z-index: 10000; background-color: aliceblue;">
         Selected Income Range: <span id="selectedIncomeRange"></span>
-    </div>
-    <div style="position: absolute; top: 10px; right: 10px; z-index: 10000;">
+        </br>
         <input type="range" id="incomeLevelMin" min="0" max="15" value="0" step="1" style="width:200px;">
         <input type="range" id="incomeLevelMax" min="0" max="15" value="15" step="1" style="width:200px;">
     </div>
@@ -68,7 +67,7 @@
             "pk.eyJ1IjoiaGFubm9oaXNzIiwiYSI6ImNsdWd6NnNtNzBjaGkybHAyMXAwZW95dnYifQ.ugCpnrkxesS79JfAl9fhJw";
         var map = new mapboxgl.Map({
             container: "map",
-            style: "mapbox://styles/mapbox/light-v10", // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
+            style: "mapbox://styles/mapbox/dark-v11", // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
             zoom: 7.5, // zoom level
             center: [-71, 42.2], // center ][lng, lat]
             transformRequest: transformRequest,
